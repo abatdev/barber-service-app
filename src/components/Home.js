@@ -12,14 +12,14 @@ const Home = () =>{
 
 
 
-          <div className='child'>
+
           <h2>Stay blessed by receiving<br></br> 
           barber services through <br></br>
           Blessed by Adean</h2>
-          </div>
-        </div>
 
-        <div id="startBtn"><button>Get Started</button></div>
+        </div> 
+
+        <div id="startBtn"><button>Get Started</button></div> 
     </div>
   )
 }
