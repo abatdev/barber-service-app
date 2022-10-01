@@ -3,3 +3,41 @@ body {
   background-color: #F3EDED;
 }
 
+.container {
+  position: relative;
+  text-align: center;
+}
+
+
+.child {
+  display: inline-block;
+  padding: 1rem 1rem;
+  vertical-align: middle;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 40px;
+}
+
+#startBtn {
+  text-align: center;
+}
+
+#startBtn button {
+  background-color: #AF5F5F;
+  color: white;
+  font-weight: bold;
+  width: 200px;
+  height: 60px;
+  font-size: 25px;
+  border: none;
+  border-radius: 15px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
