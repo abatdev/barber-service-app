@@ -9,10 +9,12 @@ const Auth = () =>{
 
       <div className='authBox'>
 
-        <h1>Get started</h1>
-        <p>Adean's barber services
-          await you...
-        </p>
+        <div className='authDesc'>
+          <h1>Get started</h1>
+          <p>Adean's barber services
+            await you...
+          </p>
+        </div>
 
         <div id='logo'>
         <img src={barberLogo} width="150" height="150" alt="Barber logo"></img>

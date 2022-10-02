@@ -44,3 +44,19 @@ h2 {
 img {
   margin-top: 10%;
 }
+
+.logoutBtn {
+  margin: 10px;
+}
+
+button.logoutBtn {
+  background-color: #AF5F5F;
+  color: white;
+  font-weight: bold;
+  width: 20%;
+  height: 30px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+}
+

@@ -62,6 +62,8 @@ function App() {
     <div className="App">
 
       {authToken ? <Nav /> : null}
+      {authToken ? <button className='logoutBtn' onClick={handleLogout}>Log out</button> : null}
+      
       <Routes>
         <Route
           path='/login'
@@ -92,7 +94,7 @@ function App() {
       </Routes>
 
 
-      {authToken ? <button onClick={handleLogout}>Log out</button> : null}
+      
       
     </div>
   );
