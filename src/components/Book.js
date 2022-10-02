@@ -3,6 +3,8 @@ import './Book.css';
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 import { useState } from 'react';
+import {  Link } from "react-router-dom";
+
 
 const Appointments = () => {
   let times = ['9:00 AM Appointment',
@@ -67,7 +69,10 @@ const Book = () =>{
         <div className="appts">
           <div className='slot'>
             <p>9:00 AM Appointment</p>
+
+            <Link to="/confirm">
             <button className='slotBtn'>Click to book</button>
+            </Link>
           </div>
 
           <div className='slot'>

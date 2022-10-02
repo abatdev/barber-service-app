@@ -2,11 +2,14 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import Nav from './components/Nav';
 import { useState, useEffect } from 'react';
+import StripeBtn from './components/StripeBtn';
+
 
 import Home from './components/Home';
 import About from './components/About';
 import Book from './components/Book';
 import Auth from './components/Auth';
+import Confirm from './components/Confirm';
 
 import Form from './components/common/Form';
 import { app } from './firebase-config';
@@ -49,13 +52,13 @@ function App() {
   let authToken = sessionStorage.getItem('Auth Token')
   useEffect(() => {
     
-    if (authToken) {
-      navigate('/')
-    }
+    // if (authToken) {
+    //   navigate('/')
+    // }
 
-    if (!authToken) {
-      navigate('/auth')
-    }
+    // if (!authToken) {
+    //   navigate('/auth')
+    // }
   }, [])
 
   return (
@@ -63,7 +66,7 @@ function App() {
 
       {authToken ? <Nav /> : null}
       {authToken ? <button className='logoutBtn' onClick={handleLogout}>Log out</button> : null}
-      
+
       <Routes>
         <Route
           path='/login'
@@ -87,6 +90,7 @@ function App() {
         />
 
 
+        <Route path='/confirm' element={<Confirm/>}/>
         <Route path='/auth' element={<Auth/>} />
         <Route path='/' element={<Home/>} />
         <Route path='/about' element={<About/>} />

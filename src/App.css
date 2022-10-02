@@ -60,3 +60,20 @@ button.logoutBtn {
   border-radius: 10px;
 }
 
+.confirmContainer {
+  background-color: #AF5F5F;
+  margin: 15%;
+  text-align: center;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.payBtn {
+  border: none;
+  border-radius: 8px;
+  width: 40%;
+  height: 30px;
+  font-weight: bold;
+  font-size: 15px;
+}
