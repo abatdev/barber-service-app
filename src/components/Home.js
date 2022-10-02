@@ -10,9 +10,6 @@ const Home = () =>{
             <img src={barberLogo} width="400" height="400" alt="Barber logo"></img>
           </div>
 
-
-
-
           <h2>Stay blessed by receiving<br></br> 
           barber services through <br></br>
           Blessed by Adean</h2>
