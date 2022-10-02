@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import Home from './components/Home';
 import About from './components/About';
 import Book from './components/Book';
+import Auth from './components/Auth';
 
 import Form from './components/common/Form';
 import { app } from './firebase-config';
@@ -15,6 +16,11 @@ function App() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   let navigate = useNavigate();
+
+  const handleLogout = () => {
+    sessionStorage.removeItem('Auth Token');
+    navigate('/login')
+  }
 
   const handleAction = (id) => {
     const authentication = getAuth();
@@ -40,46 +46,54 @@ function App() {
     }
   }
 
+  let authToken = sessionStorage.getItem('Auth Token')
   useEffect(() => {
-    let authToken = sessionStorage.getItem('Auth Token')
-
+    
     if (authToken) {
       navigate('/')
+    }
+
+    if (!authToken) {
+      navigate('/auth')
     }
   }, [])
 
   return (
     <div className="App">
 
-      <Nav />
+      {authToken ? <Nav /> : null}
       <Routes>
+        <Route
+          path='/login'
+          element={
+            <Form
+              title="Login"
+              setEmail={setEmail}
+              setPassword={setPassword}
+              handleAction={() => handleAction(1)}
+            />}
+        />
+        <Route
+          path='/register'
+          element={
+            <Form
+              title="Register"
+              setEmail={setEmail}
+              setPassword={setPassword}
+              handleAction={() => handleAction(2)}
+            />}
+        />
 
-          <Route
-            path='/login'
-            element={
-              <Form
-                title="Login"
-                setEmail={setEmail}
-                setPassword={setPassword}
-                handleAction={() => handleAction(1)}
-              />}
-          />
-          <Route
-            path='/register'
-            element={
-              <Form
-                title="Register"
-                setEmail={setEmail}
-                setPassword={setPassword}
-                handleAction={() => handleAction(2)}
-              />}
-          />
 
+        <Route path='/auth' element={<Auth/>} />
         <Route path='/' element={<Home/>} />
         <Route path='/about' element={<About/>} />
         <Route path='/book' element={<Book/>} />
       </Routes>
 
+
+      {authToken ? <button onClick={handleLogout}>Log out</button> : null}
+      
     </div>
   );
 }
